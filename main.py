@@ -4,16 +4,14 @@ from dotenv import load_dotenv
 import os
 import requests
 
-# Load the environment variables from .env file
+
 load_dotenv()
 
-# Fetch the API key from the environment variable
+
 api_key = os.getenv("GROQ_API_KEY")
 
-# Initialize the Groq model
 llm = Groq(model="llama3-70b-8192", api_key=api_key)
 
-# Calendarific API endpoint
 CALENDARIFIC_API_URL = "https://calendarific.com/api/v2/holidays"
 
 def get_public_holidays(country, year):
@@ -22,7 +20,7 @@ def get_public_holidays(country, year):
     """
     try:
         params = {
-            "api_key": "YOUR_CALENDARIFIC_API_KEY",  # Replace with your Calendarific API key
+            "api_key": "bq5iJun7DoFEait3ZQ0Trki7i3eDGngA",  
             "country": country,
             "year": year
         }
@@ -42,7 +40,7 @@ def get_public_holidays(country, year):
         return {"error": "Invalid response from Calendarific API"}
 
 # Streamlit app
-st.title("🎉 Public Holidays Tracker 🌍")
+st.title("Public Holidays Tracker 🌍")
 
 # Input fields
 country = st.text_input("Enter a country code (e.g., US, IN)")
